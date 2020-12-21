@@ -1,0 +1,96 @@
+\documentclass[a4paper,13pt,oneside]{report}
+\usepackage[subpreambles = true]{standalone}
+
+
+\title{Đồ án abcxyz}% Tiêu đề luận văn
+\author{Trần Nhựt Quang}% Người thực hiện 
+
+
+%set font chữ time new roman
+\usepackage[utf8]{inputenc}
+\usepackage[utf8]{vietnam}
+\usepackage{times}
+%set font size
+\usepackage{scrextend}
+\changefontsizes{13pt}
+%----------------------
+
+%giản dòng 1.5line
+\usepackage{setspace}
+\onehalfspace
+%-------------------
+
+%thụt đầu dòng
+%\setlength{\parindent}{0pt}%ko thụt đầu dòng
+\usepackage{indentfirst}%thụt đầu dòng tất cả các đoạn
+%--------------------
+
+%căn lề
+\usepackage[paperheight=297mm, paperwidth=210mm,top=2.5cm,inner=3cm,outer=2cm,bottom=2.5cm,headheight=120pt]{geometry}
+%------------------------------
+
+%Căn giữa chapter
+\usepackage{sectsty}   
+\chapterfont{\centering}
+%--------------------
+
+
+%gói ký tự toán
+%\usepackage{upgreek}%ký tự uF
+\usepackage{mathtools}%Bao gồm amsmath & mở rộng
+\usepackage{latexsym, amsxtra,amssymb, amscd} 
+%-----------------
+
+
+
+% Header và footer
+\usepackage{fancyhdr}% Dùng để tạo header và footer
+\usepackage{emptypage}% Không đánh số trang, header, footer với các trang trắng
+\pagestyle{fancy}
+\fancyhf{}
+
+% Header và footer nếu in 1 mặt-------------------
+\rhead{\fontsize{10}{12} \selectfont Cán bộ hướng dẫn:\\TS. ABCXYZ}% Header bên phải
+\lhead{\fontsize{10}{12} \selectfont Đề tài:\\Tên đề tài}% Header bên trái
+\rfoot{\fontsize{10}{12} \selectfont \thepage}% Footer bên phải
+\lfoot{\fontsize{10}{12} \selectfont Trần Nhựt Quang - MSSV}% Footer bên trái
+%---------------------------------------------------
+
+\begin{document}
+
+
+	
+	\input{Bia_ngoai}
+	\input{Bia_trong}
+	\pagenumbering{roman}% Kiểu số trang: i, ii, iii, iv, v,...
+
+	\tableofcontents%mục lục
+	
+	\chapter*{TÓM TẮT}
+	\input{Util/Tom_tat}
+	\pagebreak
+	
+	
+	\listoffigures%danh sách hình
+	\listoftables%danh sách bảng
+	\pagebreak
+	
+	\pagenumbering{arabic}% Kiểu số trang: 1, 2, 3,...
+	
+	\chapter{Giới thiệu}
+	\input{chapters/chapter_1}
+	\pagebreak
+	
+	\chapter{Lược khảo tài liệu}
+	\input{chapters/chapter_2}
+	\pagebreak
+	
+	
+	
+	
+	
+	\chapter{Lời cảm ơn}
+	\input{Util/loi_cam_on}
+	\pagebreak
+	
+\end{document}
